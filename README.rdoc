@@ -5,8 +5,6 @@ http://github.com/midas/live_validator/tree/master
 
 == DESCRIPTION:
 
-WARNING: this software is incomplete and has no release yet.
-
 Live validator is a Rails Guilded component that will reflect ActiveRecord validations and use them to live validate forms.  Live
 validator uses the Live Validation (http://www.livevalidation.com) JavaScript library to accomplish this task.  It also uses an
 ActiveRecord extension authored by Michael Schuerig.

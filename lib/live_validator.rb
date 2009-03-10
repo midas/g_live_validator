@@ -5,7 +5,7 @@ require 'live_validator/view_helpers'
 require 'live_validator/active_record_extensions'
 
 module LiveValidator
-  VERSION = '0.0.1'
+  VERSION = '1.0.0'
 end
 
 if defined?( ActiveRecord::Base )
