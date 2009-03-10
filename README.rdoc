@@ -47,6 +47,11 @@ Make a call to the view_helper within a form:
   <%= g_live_validator f %> # where f is the form variable passed into the form_for block
 
 
+== OPTIONS:
+
+:except - List of fields not to validate.  Foreign key fields (that end in _id) are automatically excluded.  Can be a string, 
+symbol or an array of string or sybmols.
+
 == REQUIREMENTS:
 
 * Guilded >= 0.0.5 (http://github.com/midas/guilded/tree/master)
