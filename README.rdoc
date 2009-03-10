@@ -10,7 +10,20 @@ validator uses the Live Validation (http://www.livevalidation.com) JavaScript li
 ActiveRecord extension authored by Michael Schuerig.
 
 
-== FEATURES/PROBLEMS:
+== FEATURES:
+
+* Validate Rails XHTML forms without submitting form to server.
+* Declare validations once in ActiveRecord model's.  If JavaScript is enabled, the validation will happen live.  Otherwise,
+  the validation will happen normally, with a submission to the server.
+* The error message defined in the validation macro will be used in live validation
+* The following ActiveRecrod validations are currently implemented and working: validates_presence_of (:message), 
+  validates_numericality_of (:less_than, :less_than_or_equal_to, :equal_to, :greater_than, :greater_then_or_equal_to, 
+  :only_integer, :notANumberMessage, :notAnIntegerMessage, :wrongNumberMessage, :tooLowMessage, :tooHighMessage),
+  validates_length_of / validates_size_of (:maximum, :minimum, :is, :within, :in, :too_long, :too_short, :wrong_length),
+  validates_confirmation_of (Only works for 2 fields, no more nor less.), validates_acceptance_of (:message),
+  validates_inclusion_of (:message), validates_exclusion_of (:message)
+
+==PROBLEMS:
 
 
 == INSTALL:
@@ -20,17 +33,29 @@ ActiveRecord extension authored by Michael Schuerig.
 
 == USE:
 
+Add gem requirement to your environment.rb file:
+
+  config.gem 'midas-live_validator', :version => '1.0.0', :lib => 'live_validator', :source => 'http://gems.github.com'
+
+Generate the assets for live validator:
+
+  script/generate live_validator_assets
+
+Make a call to the view_helper within a form:
+
+  <%= g_live_validator f %> # where f is the form variable passed into the form_for block
 
 
 == REQUIREMENTS:
 
-
+* Guilded >= 0.0.5
+* Rails >= 2.0
 
 == LICENSE:
 
 (The MIT License)
 
-Copyright (c) 2009 midas (excluding included material copyrighte by others)
+Copyright (c) 2009 midas (excluding included material copyrighted by others)
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
