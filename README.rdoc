@@ -5,9 +5,10 @@ http://github.com/midas/live_validator/tree/master
 
 == DESCRIPTION:
 
-Live validator is a Rails Guilded component that will reflect ActiveRecord validations and use them to live validate forms.  Live
-validator uses the Live Validation (http://www.livevalidation.com) JavaScript library to accomplish this task.  It also uses an
-ActiveRecord extension authored by Michael Schuerig.
+Live validator is a Rails Guilded (http://github.com/midas/guilded/tree/master) component that will reflect ActiveRecord validations 
+and use them to live validate forms.  Live validator uses the Live Validation (http://www.livevalidation.com) JavaScript library to 
+accomplish this task.  It also uses an ActiveRecord extension authored by Michael Schuerig to mre easily reflect on the ActiveRecord
+valdiations.
 
 
 == FEATURES:
@@ -48,7 +49,7 @@ Make a call to the view_helper within a form:
 
 == REQUIREMENTS:
 
-* Guilded >= 0.0.5
+* Guilded >= 0.0.5 (http://github.com/midas/guilded/tree/master)
 * Rails >= 2.0
 
 == LICENSE:
