@@ -13,4 +13,6 @@ if defined?( ActiveRecord )
   end
 end
 
-ActionView::Base.send( :include, LiveValidator::ViewHelpers ) if defined?( ActionView )
+if defined?( ActionView )
+  ActionView::Base.send( :include, LiveValidator::ViewHelpers ) unless ActionView.include?( LiveValidator::ViewHelpers )
+end
