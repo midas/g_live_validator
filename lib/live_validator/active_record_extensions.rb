@@ -10,7 +10,7 @@
 #++
 require 'active_record/reflection'
 
-module BoilerPlate # :nodoc:
+module LiveValidator # :nodoc:
   module ActiveRecordExtensions # :nodoc:
     module ValidationReflection # :nodoc:
       

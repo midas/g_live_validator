@@ -2,14 +2,15 @@ $:.unshift(File.dirname(__FILE__)) unless
   $:.include?(File.dirname(__FILE__)) || $:.include?(File.expand_path(File.dirname(__FILE__)))
 
 require 'live_validator/view_helpers'
+require 'live_validator/active_record_extensions'
 
 module LiveValidator
   VERSION = '0.0.1'
 end
 
-if defined?( ActiveRecord )
+if defined?( ActiveRecord::Base )
   ActiveRecord::Base.class_eval do
-    include BoilerPlate::ActiveRecordExtensions::ValidationReflection
+    include LiveValidator::ActiveRecordExtensions::ValidationReflection
   end
 end
 
