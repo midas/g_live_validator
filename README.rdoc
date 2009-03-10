@@ -1,26 +1,29 @@
 = live_validator
 
-* FIX (url)
+http://github.com/midas/live_validator/tree/master
+
 
 == DESCRIPTION:
 
-FIX (describe your package)
+Live validator is a Rails Guilded component that will reflect ActiveRecord validations and use them to live validate forms.  Live
+validator uses the Live Validation (http://www.livevalidation.com/) JavaScript library to accomplish this task.
+
 
 == FEATURES/PROBLEMS:
 
-* FIX (list of features or problems)
-
-== SYNOPSIS:
-
-  FIX (code sample of usage)
-
-== REQUIREMENTS:
-
-* FIX (list of requirements)
 
 == INSTALL:
 
-* FIX (sudo gem install, anything else)
+  sudo gem install midas-live_validator
+
+
+== USE:
+
+
+
+== REQUIREMENTS:
+
+
 
 == LICENSE:
 
