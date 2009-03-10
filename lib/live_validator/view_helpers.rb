@@ -29,6 +29,9 @@ module LiveValidator
     # 
     # If you need to do custom initialization you can implement g.beforeLiveValidatorInit() or 
     # g.afterLiveValidatorInit().
+    #
+    # If you need custom handling of valid or invalid fields, you can implement g.liveValidatorInvalidField() 
+    # or g. liveValidatorValidField().
     # 
     # *parameters*
     # form:: The form object from the form_for helper.
