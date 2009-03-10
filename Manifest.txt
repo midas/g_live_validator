@@ -4,6 +4,9 @@ PostInstall.txt
 README.rdoc
 Rakefile
 lib/live_validator.rb
+rails_generators/live_validator_assets/live_validator_assets_generator.rb
+rails_generators/live_validator_assets/templates/guilded.live_validator.js
+rails_generators/live_validator_assets/templates/livevalidation-1.3.compressed.js
 script/console
 script/destroy
 script/generate
