@@ -82,7 +82,7 @@ module LiveValidator
       end
       
       options.merge! :validations => validations
-      Guilded::Guilder.instance.add( :live_validator, options, [ 'livevalidation-1.3.compressed.js' ] )
+      Guilded::Guilder.instance.add( :live_validator, options, [ 'livevalidation-1.3.min.js' ] )
       return ""
     end
     
