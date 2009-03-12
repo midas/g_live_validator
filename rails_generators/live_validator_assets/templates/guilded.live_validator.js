@@ -1,6 +1,6 @@
-// Guilded Live Validator 1.0.1
-// Copyright (c) 2009 C. Jason Harrelson (midas)
-// Guilded Live Validator is licensed under the terms of the MIT License
+/* Guilded Live Validator 1.0.1
+ * Copyright (c) 2009 C. Jason Harrelson (midas)
+ * Guilded Live Validator is licensed under the terms of the MIT License */
 
 g.doInvalidField = function()
 {
