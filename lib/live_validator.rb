@@ -5,7 +5,7 @@ require 'live_validator/view_helpers'
 require 'live_validator/active_record_extensions'
 
 module LiveValidator
-  VERSION = '1.0.1'
+  VERSION = '1.0.2'
 end
 
 if defined?( ActiveRecord::Base )
@@ -14,6 +14,6 @@ if defined?( ActiveRecord::Base )
   end
 end
 
-if defined?( ActionView )
-  ActionView::Base.send( :include, LiveValidator::ViewHelpers ) unless ActionView.include?( LiveValidator::ViewHelpers )
+if defined?( ActionView::Base )
+  ActionView::Base.send( :include, LiveValidator::ViewHelpers ) unless ActionView::Base.include?( LiveValidator::ViewHelpers )
 end

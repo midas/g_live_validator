@@ -8,6 +8,7 @@ lib/live_validator/active_record_extensions.rb
 lib/live_validator/view_helpers.rb
 live_validator.gemspec
 rails_generators/live_validator_assets/live_validator_assets_generator.rb
+rails_generators/live_validator_assets/templates/default.css
 rails_generators/live_validator_assets/templates/guilded.live_validator.js
 rails_generators/live_validator_assets/templates/guilded.live_validator.min.js
 rails_generators/live_validator_assets/templates/livevalidation-1.3.min.js

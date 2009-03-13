@@ -13,7 +13,7 @@ $hoe = Hoe.new('live_validator', LiveValidator::VERSION) do |p|
   # ]
   p.extra_dev_deps = [
     ['newgem', ">= #{::Newgem::VERSION}"],
-    ['midas-guilded', ">=0.0.6"]
+    ['midas-guilded', ">=0.1.3"]
   ]
   
   p.clean_globs |= %w[**/.DS_Store tmp *.log]
