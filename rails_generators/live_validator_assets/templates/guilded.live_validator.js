@@ -2,6 +2,8 @@
  * Copyright (c) 2009 C. Jason Harrelson (midas)
  * Guilded Live Validator is licensed under the terms of the MIT License */
 
+g.liveValidations = {}; /* The collection of live validation objects indexed by field names */
+
 g.doInvalidField = function()
 {
   if( g.liveValidatorInvalidField )
@@ -58,7 +60,7 @@ g.liveValidatorInit = function( options )
   {
     /* Guard against fields that we cannot find throwing errors.  Just don't 
      * attach if you cannot find it. */
-    fieldEl = $j( '#' + field );
+    fieldEl = $jid( field );
     if( fieldEl.length == 0 )
       continue;
 
@@ -71,6 +73,7 @@ g.liveValidatorInit = function( options )
     {
       var validation = vList[i];
       v.add( validationMethods[ validation.name ], validation.args );
+      g.liveValidations[field] = v;
     }
   }
   

@@ -1,3 +1,8 @@
+== 1.0.3
+
+* Updated JavaScript to keep a collection LiveValidation objects indexed by field name accessible in th g namespace
+
+
 == 1.0.1
 
 * Added a guilded.live_validator.min.js file.
