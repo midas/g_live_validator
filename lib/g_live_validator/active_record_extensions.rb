@@ -10,7 +10,7 @@
 #++
 require 'active_record/reflection'
 
-module LiveValidator # :nodoc:
+module GLiveValidator # :nodoc:
   module ActiveRecordExtensions # :nodoc:
     module ValidationReflection # :nodoc:
       

@@ -3,9 +3,9 @@ Manifest.txt
 PostInstall.txt
 README.rdoc
 Rakefile
-lib/live_validator.rb
-lib/live_validator/active_record_extensions.rb
-lib/live_validator/view_helpers.rb
+lib/g_live_validator.rb
+lib/g_live_validator/active_record_extensions.rb
+lib/g_live_validator/view_helpers.rb
 live_validator.gemspec
 rails_generators/live_validator_assets/live_validator_assets_generator.rb
 rails_generators/live_validator_assets/templates/default.css

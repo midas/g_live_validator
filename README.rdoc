@@ -36,7 +36,7 @@ valdiations.
 
 Add gem requirement to your environment.rb file:
 
-  config.gem 'midas-live_validator', :version => '1.0.2', :lib => 'live_validator', :source => 'http://gems.github.com'
+  config.gem 'midas-live_validator', :version => '1.0.3', :lib => 'live_validator', :source => 'http://gems.github.com'
 
 Generate the assets for live validator:
 

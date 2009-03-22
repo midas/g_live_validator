@@ -1,9 +1,9 @@
 %w[rubygems rake rake/clean fileutils newgem rubigen].each { |f| require f }
-require File.dirname(__FILE__) + '/lib/live_validator'
+require File.dirname(__FILE__) + '/lib/g_live_validator'
 
 # Generate all the Rake tasks
 # Run 'rake -T' to see list of generated tasks (from gem root directory)
-$hoe = Hoe.new('live_validator', LiveValidator::VERSION) do |p|
+$hoe = Hoe.new('g_live_validator', GLiveValidator::VERSION) do |p|
   p.developer('C. Jason Harrelson (midas)', 'jason@lookforwardenterprises.com')
   p.changes              = p.paragraphs_of("History.txt", 0..1).join("\n\n")
   p.post_install_message = 'PostInstall.txt' # TODO remove if post-install message not required
@@ -13,7 +13,8 @@ $hoe = Hoe.new('live_validator', LiveValidator::VERSION) do |p|
   # ]
   p.extra_dev_deps = [
     ['newgem', ">= #{::Newgem::VERSION}"],
-    ['midas-guilded', ">=0.1.3"]
+    ['rails', ">= 2.2.0"],
+    ['midas-guilded', ">=0.1.4"]
   ]
   
   p.clean_globs |= %w[**/.DS_Store tmp *.log]

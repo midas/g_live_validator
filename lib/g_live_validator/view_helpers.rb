@@ -1,4 +1,4 @@
-module LiveValidator
+module GLiveValidator
   module ViewHelpers
     
     G_VALIDATION_METHODS = {
@@ -46,6 +46,9 @@ module LiveValidator
       class_name = klass.to_s.downcase
       options.merge! :id => "live-validator-#{class_name}"
       ar_obj_name = form.object.class.to_s.underscore
+      
+      # TODO: Add human names to options
+      #options.merge! :human_names => form.object
       
       validations = g_map_validations( klass.reflect_on_all_validations )
       
