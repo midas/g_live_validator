@@ -2,7 +2,8 @@
  * Copyright (c) 2009 C. Jason Harrelson (midas)
  * Guilded Live Validator is licensed under the terms of the MIT License */
 
-g.liveValidations = {}; /* The collection of live validation objects indexed by field names */
+g.liveValidationsByField = {}; /* The collection of live validation objects indexed by field names */
+g.liveValidations = []; /* The collection of live validation objects */
 
 g.doInvalidField = function()
 {
@@ -12,7 +13,7 @@ g.doInvalidField = function()
   }
   else
   {
-    this.insertMessage( this.createMessageSpan() ); 
+    this.insertMessage( this.createMessageSpan() );
     this.addFieldClass();
   }
 };
@@ -23,16 +24,16 @@ g.doValidField = function()
     g.liveValidatorValidField( this );
   else
   {
-    this.insertMessage( this.createMessageSpan() ); 
+    this.insertMessage( this.createMessageSpan() );
     this.addFieldClass();
   }
 };
 
-g.liveValidatorInit = function( options ) 
+g.liveValidatorInit = function( options )
 {
   if( g.beforeLiveValidatorInit )
     g.beforeLiveValidatorInit( options );
-  
+
   var moreValidationMethods = {
     presence: Validate.Presence,
     numericality: Validate.Numericality,
@@ -58,25 +59,26 @@ g.liveValidatorInit = function( options )
 
   for( field in validations )
   {
-    /* Guard against fields that we cannot find throwing errors.  Just don't 
+    /* Guard against fields that we cannot find throwing errors.  Just don't
      * attach if you cannot find it. */
-    fieldEl = $jid( field );
+    fieldEl = $j( '#' + field );
     if( fieldEl.length == 0 )
       continue;
 
     var vList = validations[ field ];
     var v = null;
-    
+
     v = new LiveValidation( field, { onlyOnBlur:true, onInvalid:g.doInvalidField, onValid:g.doValidField } );
 
     for( var i=0; i<vList.length; i++ )
     {
       var validation = vList[i];
       v.add( validationMethods[ validation.name ], validation.args );
-      g.liveValidations[field] = v;
+      g.liveValidationsByField[field] = v;
+      g.liveValidations.push( v );
     }
   }
-  
+
   if( g.afterLiveValidatorInit )
     g.afterLiveValidatorInit( options );
 };
