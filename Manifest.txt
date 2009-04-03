@@ -3,6 +3,7 @@ Manifest.txt
 PostInstall.txt
 README.rdoc
 Rakefile
+g_live_validator.gemspec
 lib/g_live_validator.rb
 lib/g_live_validator/active_record_extensions.rb
 lib/g_live_validator/view_helpers.rb

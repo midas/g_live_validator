@@ -52,6 +52,7 @@ Make a call to the view_helper within a form:
 :except - List of fields not to validate.  Foreign key fields (that end in _id) are automatically excluded.  Can be a string, 
 symbol or an array of string or sybmols.
 
+
 == REQUIREMENTS:
 
 * Guilded >= 0.1.3 (http://github.com/midas/guilded/tree/master)

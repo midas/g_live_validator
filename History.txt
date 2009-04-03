@@ -1,3 +1,8 @@
+== 1.0.4 2009-04-03
+
+* Added support for InacvtiveRecord (http://github.com/midas/inactive_record/tree/master) validations
+
+
 == 1.0.3
 
 * Updated JavaScript to keep a collection LiveValidation objects indexed by field name accessible in th g namespace
