@@ -29,11 +29,11 @@ valdiations.
 
 == INSTALL:
 
-  sudo gem install midas-live_validator
+  sudo gem install midas-g_live_validator
 
 Add gem requirement to your environment.rb file:
 
-  config.gem 'midas-live_validator', :version => '1.0.4', :lib => 'live_validator', :source => 'http://gems.github.com'
+  config.gem 'midas-g_live_validator', :version => '1.0.4', :lib => 'g_live_validator', :source => 'http://gems.github.com'
 
 Generate:
 
