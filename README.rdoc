@@ -36,7 +36,7 @@ valdiations.
 
 Add gem requirement to your environment.rb file:
 
-  config.gem 'midas-live_validator', :version => '1.0.3', :lib => 'live_validator', :source => 'http://gems.github.com'
+  config.gem 'midas-live_validator', :version => '1.0.4', :lib => 'live_validator', :source => 'http://gems.github.com'
 
 Generate the assets for live validator:
 
@@ -57,6 +57,7 @@ symbol or an array of string or sybmols.
 
 * Guilded >= 0.1.3 (http://github.com/midas/guilded/tree/master)
 * Rails >= 2.0
+
 
 == LICENSE:
 
