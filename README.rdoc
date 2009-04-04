@@ -31,16 +31,16 @@ valdiations.
 
   sudo gem install midas-live_validator
 
-
-== USE:
-
 Add gem requirement to your environment.rb file:
 
   config.gem 'midas-live_validator', :version => '1.0.4', :lib => 'live_validator', :source => 'http://gems.github.com'
 
-Generate the assets for live validator:
+Generate:
 
   script/generate live_validator_assets
+
+
+== USE:
 
 Make a call to the view_helper within a form:
 
