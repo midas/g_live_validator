@@ -51,38 +51,24 @@ module GLiveValidator
       #options.merge! :human_names => form.object
       
       validations = g_map_validations( klass.reflect_on_all_validations )
+      validations = apply_options( form, validations, options )
       
-      # Remove any foreign keys as they will not be present on the form
-      validations.reject! { |field, validation| field.include?( "_id" ) }
+      options.merge! :validations => validations
+      Guilded::Guilder.instance.add( :live_validator, options, [ 'livevalidation-1.3.min.js' ] )
+      return ""
+    end
+    
+    def g_live_dynamic_validator( form, validation_rules, *args )
+      options = args.extract_options!
+      klass = form.object.class
+      class_name = klass.to_s.downcase
+      options.merge! :id => "live-validator-#{class_name}"
+      ar_obj_name = form.object.class.to_s.underscore
       
-      # Remove any excepts, if necessary
-      if options[:except]
-        if options[:except].is_a?( Array )
-          excepts = options[:except]
-        elsif options[:except].is_a?( String ) || options[:except].is_a?( Symbol )
-          excepts = Array.new << options[:except]          
-        else
-          throw "'Except' option must be a string symbol or arry of strings or symbols"
-        end
-
-        # Add the AR object name to the field name, as Rails does this on forms
-        excepts.map! { |except| "#{ar_obj_name}_#{except.to_s}" }
-        
-        excepts.each do |except|
-          validations.reject! { |field, validation| field == except }
-        end
-      end
+      validation_defs = validation_rules.map { |validation_rule| ValidationDefinition.new( validation_rule ) }
       
-      # Handle nested form namings, if necessary
-      if form.object.class.to_s.underscore != form.object_name
-        #field_precursor = form.object_name.gsub( /\[/, '_' ).gsub( /\]/, '_' )
-        field_precursor = form.object_name[0...form.object_name.index( "[" )] + '_'
-        nested_validations = Hash.new
-        validations.each do |key, value|
-          nested_validations[ "#{field_precursor}#{key}".to_sym ] = value
-        end
-        validations = nested_validations
-      end
+      validations = g_map_validations( validation_defs )
+      validations = apply_options( form, validations, options )
       
       options.merge! :validations => validations
       Guilded::Guilder.instance.add( :live_validator, options, [ 'livevalidation-1.3.min.js' ] )
@@ -177,5 +163,40 @@ module GLiveValidator
       return validations
     end
     
+    def apply_options( form, validations, options )
+      # Remove any foreign keys as they will not be present on the form
+      validations.reject! { |field, validation| field.include?( "_id" ) }
+      
+      # Remove any excepts, if necessary
+      if options[:except]
+        if options[:except].is_a?( Array )
+          excepts = options[:except]
+        elsif options[:except].is_a?( String ) || options[:except].is_a?( Symbol )
+          excepts = Array.new << options[:except]          
+        else
+          throw "'Except' option must be a string symbol or arry of strings or symbols"
+        end
+
+        # Add the AR object name to the field name, as Rails does this on forms
+        excepts.map! { |except| "#{ar_obj_name}_#{except.to_s}" }
+        
+        excepts.each do |except|
+          validations.reject! { |field, validation| field == except }
+        end
+      end
+      
+      # Handle nested form namings, if necessary
+      if form.object.class.to_s.underscore != form.object_name
+        #field_precursor = form.object_name.gsub( /\[/, '_' ).gsub( /\]/, '_' )
+        field_precursor = form.object_name[0...form.object_name.index( "[" )] + '_'
+        nested_validations = Hash.new
+        validations.each do |key, value|
+          nested_validations[ "#{field_precursor}#{key}".to_sym ] = value
+        end
+        validations = nested_validations
+      end
+      
+      validations
+    end
   end
 end
