@@ -28,10 +28,10 @@ module GLiveValidator
     # validates_exclusion_of - :message
     # 
     # If you need to do custom initialization you can implement g.beforeLiveValidatorInit() or 
-    # g.afterLiveValidatorInit().
+    # g.afterLiveValidatorInit() in the client side JavaScript environment.
     #
     # If you need custom handling of valid or invalid fields, you can implement g.liveValidatorInvalidField() 
-    # or g. liveValidatorValidField().
+    # or g.liveValidatorValidField() in the client side JavaScript environment.
     # 
     # *parameters*
     # form:: The form object from the form_for helper.
@@ -58,6 +58,26 @@ module GLiveValidator
       return ""
     end
     
+    # Guilded component.  The live dynamic validator accepts an array of ValidationDefinition objects and
+    # sets up the live validations accordingly.  This makes the live dynamic validator usable with the 
+    # midas-dynamic_validations gem and possibly other validations that can be standardized through the 
+    # ValidationDefinition object.
+    # 
+    # The same validations that are supported by the g_live_validator are also supported.
+    #
+    # If you need to do custom initialization you can implement g.beforeLiveValidatorInit() or 
+    # g.afterLiveValidatorInit() in the client side JavaScript environment.
+    #
+    # If you need custom handling of valid or invalid fields, you can implement g.liveValidatorInvalidField() 
+    # or g.liveValidatorValidField() in the client side JavaScript environment.
+    # 
+    # *parameters*
+    # form:: The form object from the form_for helper.
+    # 
+    # *options*
+    # id:: (required)
+    # except:: List of fields to not include.  A string, symbol or array of strings or symbols. 
+    #
     def g_live_dynamic_validator( form, validation_rules, *args )
       options = args.extract_options!
       klass = form.object.class
