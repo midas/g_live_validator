@@ -1,16 +1,21 @@
-== 1.0.4 2009-06-03
+== 1.0.6 2009-06-18
 
-* Added the g_live_dynamic_validations view helper that works with dynamic validations gem
+* Added code so that client side JavaScript does not add validations with if or except options.
+
+
+== 1.0.5 2009-06-03
+
+* Added the g_live_dynamic_validations view helper that works with dynamic validations gem.
 
 
 == 1.0.4 2009-04-03
 
-* Added support for InacvtiveRecord (http://github.com/midas/inactive_record/tree/master) validations
+* Added support for InacvtiveRecord (http://github.com/midas/inactive_record/tree/master) validations.
 
 
 == 1.0.3
 
-* Updated JavaScript to keep a collection LiveValidation objects indexed by field name accessible in th g namespace
+* Updated JavaScript to keep a collection LiveValidation objects indexed by field name accessible in the g namespace.
 
 
 == 1.0.1
@@ -19,4 +24,4 @@
 
 == 0.0.1 2009-03-09
 
-* Initial release
+* Initial release.

@@ -2,11 +2,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{g_live_validator}
-  s.version = "1.0.5"
+  s.version = "1.0.6"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["C. Jason Harrelson (midas)"]
-  s.date = %q{2009-06-03}
+  s.date = %q{2009-06-18}
   s.description = %q{Live validator is a Rails Guilded (http://github.com/midas/guilded/tree/master) component that will reflect ActiveRecord validations  and use them to live validate forms.  Live validator uses the Live Validation (http://www.livevalidation.com) JavaScript library to  accomplish this task.  It also uses an ActiveRecord extension authored by Michael Schuerig to mre easily reflect on the ActiveRecord valdiations.}
   s.email = ["jason@lookforwardenterprises.com"]
   s.extra_rdoc_files = ["History.txt", "Manifest.txt", "PostInstall.txt", "README.rdoc"]

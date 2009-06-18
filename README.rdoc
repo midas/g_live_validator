@@ -17,7 +17,7 @@ valdiations.
 * Declare validations once in ActiveRecord model's.  If JavaScript is enabled, the validation will happen live.  Otherwise,
   the validation will happen normally, with a submission to the server.
 * The error message defined in the validation macro will be used in live validation
-* The following ActiveRecrod validations are currently implemented and working: validates_presence_of (:message), 
+* The following ActiveRecord validations are currently implemented and working: validates_presence_of (:message), 
   validates_numericality_of (:less_than, :less_than_or_equal_to, :equal_to, :greater_than, :greater_then_or_equal_to, 
   :only_integer, :notANumberMessage, :notAnIntegerMessage, :wrongNumberMessage, :tooLowMessage, :tooHighMessage),
   validates_length_of / validates_size_of (:maximum, :minimum, :is, :within, :in, :too_long, :too_short, :wrong_length),
@@ -45,6 +45,11 @@ Generate:
 Make a call to the view_helper within a form:
 
   <%= g_live_validator f %> # where f is the form variable passed into the form_for block
+
+To use with a library like midas-dynamic_Validations, that does not use ActiveRecord validations, but some other method of 
+defining validations:
+
+  <%= g_live_dynamic_validator f, @validation_definitions %>
 
 
 == OPTIONS:

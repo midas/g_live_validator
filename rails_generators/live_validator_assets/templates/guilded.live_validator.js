@@ -7,6 +7,7 @@ g.liveValidations = []; /* The collection of live validation objects */
 
 g.doInvalidField = function()
 {
+  // If the invalid field method is implemented
   if( g.liveValidatorInvalidField )
   {
     g.liveValidatorInvalidField( this );
@@ -20,6 +21,7 @@ g.doInvalidField = function()
 
 g.doValidField = function()
 {
+  // If the valid field method is implemented
   if( g.liveValidatorValidField )
     g.liveValidatorValidField( this );
   else
@@ -73,7 +75,11 @@ g.liveValidatorInit = function( options )
     for( var i=0; i<vList.length; i++ )
     {
       var validation = vList[i];
-      v.add( validationMethods[ validation.name ], validation.args );
+      if( validation.args == null || ( validation.args['if'] == null && validation.args['except'] == null ) )
+      {
+        v.add( validationMethods[ validation.name ], validation.args );
+      }
+
       g.liveValidationsByField[field] = v;
       g.liveValidations.push( v );
     }
