@@ -51,7 +51,7 @@ module GLiveValidator
       #options.merge! :human_names => form.object
       
       validations = g_map_validations( klass.reflect_on_all_validations )
-      validations = apply_options( form, validations, options )
+      validations = apply_options( form, validations, ar_obj_name, options )
       
       options.merge! :validations => validations
       Guilded::Guilder.instance.add( :live_validator, options, [ 'livevalidation-1.3.min.js' ] )
@@ -88,7 +88,7 @@ module GLiveValidator
       validation_defs = validation_rules.map { |validation_rule| ValidationDefinition.new( validation_rule ) }
       
       validations = g_map_validations( validation_defs )
-      validations = apply_options( form, validations, options )
+      validations = apply_options( form, validations, ar_obj_name, options )
       
       options.merge! :validations => validations
       Guilded::Guilder.instance.add( :live_validator, options, [ 'livevalidation-1.3.min.js' ] )
@@ -183,9 +183,9 @@ module GLiveValidator
       return validations
     end
     
-    def apply_options( form, validations, options )
+    def apply_options( form, validations, ar_obj_name, options )
       # Remove any foreign keys as they will not be present on the form
-      validations.reject! { |field, validation| field.include?( "_id" ) }
+      #validations.reject! { |field, validation| field.include?( "_id" ) }
       
       # Remove any excepts, if necessary
       if options[:except]
