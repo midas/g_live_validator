@@ -6,7 +6,7 @@ require 'g_live_validator/validation_definition'
 require 'g_live_validator/active_record_extensions'
 
 module GLiveValidator
-  VERSION = '1.0.6'
+  VERSION = '1.0.7'
 end
 
 if defined?( ActiveRecord::Base )

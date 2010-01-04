@@ -1,3 +1,8 @@
+== 1.0.7 2010-01-04
+
+* Stopped automatically eliminating *_id fields from validations.
+
+
 == 1.0.6 2009-06-18
 
 * Added code so that client side JavaScript does not add validations with if or except options.
