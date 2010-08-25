@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{g_live_validator}
-  s.version = "1.0.7"
+  s.version = "1.0.8"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["C. Jason Harrelson (midas)"]
-  s.date = %q{2010-01-04}
+  s.date = %q{2010-08-25}
   s.email = %q{jason@lookforwardenterprises.com}
   s.extra_rdoc_files = [
     "LICENSE",
@@ -27,7 +27,6 @@ Gem::Specification.new do |s|
      "lib/g_live_validator/active_record_extensions.rb",
      "lib/g_live_validator/validation_definition.rb",
      "lib/g_live_validator/view_helpers.rb",
-     "live_validator.gemspec",
      "rails_generators/live_validator_assets/live_validator_assets_generator.rb",
      "rails_generators/live_validator_assets/templates/default.css",
      "rails_generators/live_validator_assets/templates/guilded.live_validator.js",
@@ -45,7 +44,7 @@ Gem::Specification.new do |s|
   s.homepage = %q{http://github.com/midas/g_live_validator}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.3.5}
+  s.rubygems_version = %q{1.3.7}
   s.summary = %q{A Guilded (http://github.com/midas/guilded/tree/master) component that will reflect ActiveRecord validations and use them to live validate forms.}
   s.test_files = [
     "spec/live_validator_spec.rb",
@@ -56,18 +55,21 @@ Gem::Specification.new do |s|
     current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION
     s.specification_version = 3
 
-    if Gem::Version.new(Gem::RubyGemsVersion) >= Gem::Version.new('1.2.0') then
+    if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
       s.add_runtime_dependency(%q<rails>, [">= 2.2.0"])
       s.add_runtime_dependency(%q<guilded>, [">= 1.0.3"])
+      s.add_runtime_dependency(%q<validation_reflection>, [">= 0.3.5"])
       s.add_development_dependency(%q<rspec>, [">= 1.2.9"])
     else
       s.add_dependency(%q<rails>, [">= 2.2.0"])
       s.add_dependency(%q<guilded>, [">= 1.0.3"])
+      s.add_dependency(%q<validation_reflection>, [">= 0.3.5"])
       s.add_dependency(%q<rspec>, [">= 1.2.9"])
     end
   else
     s.add_dependency(%q<rails>, [">= 2.2.0"])
     s.add_dependency(%q<guilded>, [">= 1.0.3"])
+    s.add_dependency(%q<validation_reflection>, [">= 0.3.5"])
     s.add_dependency(%q<rspec>, [">= 1.2.9"])
   end
 end
